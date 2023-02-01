@@ -12,4 +12,25 @@ function getMarkup(data = []) {
     .join("");
 }
 
-export { getMarkup };
+function getMarkupUserTable({
+  name,
+  username,
+  email,
+  address,
+  phone,
+  website,
+  company,
+}) {
+  return `<tr data-userid="2">
+            <th scope="row">1</th>
+            <td>${name}</td>
+            <td>${username}</td>
+            <td>${email}</td>
+            <td>${address.city}</td>
+            <td>${phone}</td>
+            <td>${website}</td>
+            <td>${company.name}</td>
+          </tr>`;
+}
+
+export { getMarkup, getMarkupUserTable };
