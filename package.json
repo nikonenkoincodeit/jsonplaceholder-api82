@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production --public-url /jsonplaceholder-api45/"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
