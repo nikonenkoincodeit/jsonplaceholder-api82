@@ -26,3 +26,11 @@ getData(`albums?userId=${userId}`)
   .catch((error) => {
     console.log(error.message);
   });
+
+jsAlbumEl.addEventListener("click", (event) => {
+  const albumId = event.target.closest(".js-list-user-album").dataset.id;
+  if (!albumId) {
+    return;
+  }
+  location.href = "album.html?albumId=" + albumId;
+});

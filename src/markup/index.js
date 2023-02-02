@@ -45,4 +45,24 @@ function getMarkupUserAlbums(albums = []) {
     })
     .join("");
 }
-export { getMarkup, getMarkupUserTable, getMarkupUserAlbums };
+function getMarkupAlbumsCard(photos = []) {
+  return photos
+    .map(({ id, title, thumbnailUrl }) => {
+      return `<div class="card" data-set="${id}">
+    <img class="bd-placeholder-img card-img-top" width="200" height="200"
+      src="${thumbnailUrl}" alt="${title}" />
+    <div class="card-body">
+      <p class="card-text">
+        ${title}
+      </p>
+    </div>
+  </div>`;
+    })
+    .join("");
+}
+export {
+  getMarkup,
+  getMarkupUserTable,
+  getMarkupUserAlbums,
+  getMarkupAlbumsCard,
+};
