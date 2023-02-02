@@ -10,9 +10,7 @@ const albumId = params.get("albumId") || 1;
 
 getData(`photos?albumId=${albumId}`)
   .then((r) => {
-    console.log(r);
     const markup = getMarkupAlbumsCard(r);
-    console.log(markup);
     addUsersTable(markup, jsSongEl);
   })
   .catch((error) => {
