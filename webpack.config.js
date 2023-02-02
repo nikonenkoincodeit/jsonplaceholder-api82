@@ -8,7 +8,7 @@ module.exports = {
     album: path.resolve(__dirname, "./src/components/album.js"),
     user: path.resolve(__dirname, "./src/components/user.js"),
   },
-  output: { path: path.resolve(__dirname, "build"), filename: ["name"].js },
+  output: { path: path.resolve(__dirname, "build"), filename: ["name"].js, publicPath: 'auto' },
   plugins: [
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, "./src/pages/index.html"),
