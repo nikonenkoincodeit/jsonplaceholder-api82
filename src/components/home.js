@@ -2,6 +2,9 @@ import { getData } from "../api";
 import { makeFirstTableMarkup } from "../markup";
 import { tableEl } from "../refs";
 import { addMarkup } from "../utils";
+
+tableEl.addEventListener("click", onUserClick);
+
 getData("users")
   .then((response) => {
     const markup = makeFirstTableMarkup(response);
@@ -12,3 +15,14 @@ getData("users")
   .catch((error) => {
     console.log(error.message);
   });
+
+
+function onUserClick(e) {
+  const trEl = e.target.closest("tr");
+  if(!trEl) {
+    return;
+  }
+  const userId = trEl.dataset.userid;
+  console.log(userId);
+  location.href = "user.html?userId=" + userId;
+}
