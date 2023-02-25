@@ -7,7 +7,6 @@ export function makeFirstTableMarkup(items = []) {
     <td>${username}</td>
     <td>${email}</td>
     <td>${website}</td>
-<<<<<<< HEAD
     </tr>`;
     })
     .join("");
@@ -37,9 +36,3 @@ export function userIdMarkup({
 <td>${company.name}</td>
 </tr>`;
 }
-=======
-  </tr>`;
-    })
-    .join("");
-}
->>>>>>> eb7abd3c746d95da1f960a492381e49abfa08c96
