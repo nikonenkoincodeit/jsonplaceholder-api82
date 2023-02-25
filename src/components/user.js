@@ -3,6 +3,8 @@ import { userIdMarkup, createAlbumList } from "../markup";
 import { addMarkup } from "../utils";
 import { tbody, albumList } from "../refs";
 
+albumList.addEventListener("click", onAlbumClick);
+
 const search = location.search;
 console.log(search);
 const params = new URLSearchParams(search);
@@ -19,3 +21,13 @@ getData(`albums?userId=${userId}`).then((response) => {
 
   addMarkup(markup, albumList);
 });
+
+function onAlbumClick(event) {
+  const liEl = event.target.closest("li");
+  if (!liEl) {
+    return;
+  }
+  const albumId = liEl.dataset.id;
+  console.log(albumId);
+  location.href = "album.html?albumId=" + albumId;
+}

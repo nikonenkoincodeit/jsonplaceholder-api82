@@ -14,12 +14,13 @@ getData("users")
     console.log(error.message);
   });
 
-function onUserClick(event) {
-  const trEl = event.target.closest("tr");
-  if (!trEl) {
-    return;
+  function onUserClick(event) {
+    const trEl = event.target.closest("tr");
+    if (!trEl) {
+      return;
+    }
+    const userId = trEl.dataset.userid;
+    console.log(userId);
+    location.href = "user.html?userId=" + userId;
   }
-  const userId = trEl.dataset.userid;
-  console.log(userId);
-  location.href = "user.html?userId=" + userId;
-}
+
