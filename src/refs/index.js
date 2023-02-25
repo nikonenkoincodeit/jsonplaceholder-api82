@@ -1,4 +1,5 @@
 const tbody = document.querySelector(".js-user-table");
 const tableEl = document.querySelector(".js-tbody");
 
-export { tableEl, tbody };
+const albumList = document.querySelector(".js-album");
+export { tableEl, tbody, albumList };
