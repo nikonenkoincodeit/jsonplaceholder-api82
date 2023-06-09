@@ -13,3 +13,15 @@ function onLoad() {
     })
     .catch((error) => console.log(error.message));
 }
+
+tbodyEl.addEventListener('click', onTableCklick)
+
+function onTableCklick(evt) { 
+  const trEl = evt.target.closest('tr');
+  if (!trEl) {
+    return;
+  }
+  const userId = trEl.dataset.userid;
+  console.log(userId)
+  location.href = 'user.html?userId=' + userId;
+}
